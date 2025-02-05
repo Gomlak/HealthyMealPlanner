@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#meal-planner {
+    margin-bottom: 20px;
+}
+
+.meal-day {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}

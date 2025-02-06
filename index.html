@@ -5,13 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Meal Planner</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        header h1 {
+            text-align: center;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Weekly Meal Planner</h1>
-    <div id="meal-planner">
-        <!-- Meal Plan will be populated here -->
-    </div>
-    <button id="generate-plan">Generate Meal Plan</button>
-    <script src="script.js"></script>
+    <header>
+        <h1>Welcome to Your Weekly Meal Planner</h1>
+    </header>
+    <img src="images/meal-planner-banner.jpg" alt="Healthy Meal Planner Banner" class="banner">
+    <main>
+        <section class="intro">
+            <p class="highlight">Your meal plan for the week of:</p>
+            <p class="dates">Monday, 10th February 2025 to Sunday, 16th February 2025</p>
+        </section>
+        <section class="plan-selection">
+            <label for="plan-type">Select Meal Plan:</label>
+            <select id="plan-type">
+                <option value="southIndian">South Indian</option>
+                <option value="northIndian">North Indian</option>
+                <option value="continental">Continental</option>
+            </select>
+            <button id="generate-plan">Generate Meal Plan</button>
+        </section>
+        <section id="meal-planner">
+            <!-- Meal Plan will be populated here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Healthy Meal Planner. All rights reserved.</p>
+    </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>

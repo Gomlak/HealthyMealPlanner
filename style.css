@@ -1,14 +1,105 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: none;
+    background-color: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Adjusted to align main content to the top */
+    min-height: 100vh;
+    line-height: 1.6;
+    font-size: 1.1em;
+    text-align: justify;
+    font-weight: bold;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 10vh; /* Adjusted height to 10% of the viewport height */
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+/* Ensure the banner is not centered */
+.banner {
+    width: 100%;
+    height: 25vh; /* Adjusted height to 25% of the viewport height */
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 10%;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the main content */
+    justify-content: flex-start;
+    margin-top: 35vh; /* Adjusted to account for header and resized banner */
 }
 
 #meal-planner {
-    margin-bottom: 20px;
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .meal-day {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.highlight {
+    text-align: center;
+    color: blue; /* Changed text color to blue */
+}
+
+.day-header {
+    color: red; /* Changed text color to red */
+}
+
+table th {
+    color: blue; /* Changed header text color to blue */
 }

@@ -205,7 +205,46 @@ function generateMealPlan() {
             totalCalories += mealPlan[day][meal].calories;
         }
 
+
+        let totalCalories = 0;
+        for (const meal in mealPlan[day]) {
+            totalCalories += mealPlan[day][meal].calories;
+        }
+
         dayDiv.innerHTML = `<strong>${day}</strong><br>` +
+            `<table>
+                <tr>
+                    <th>Meal</th>
+                    <th>Item</th>
+                    <th>Calories</th>
+                </tr>
+                <tr>
+                    <td>Breakfast</td>
+                    <td>${mealPlan[day].Breakfast.item}</td>
+                    <td>${mealPlan[day].Breakfast.calories}</td>
+                </tr>
+                <tr>
+                    <td>Snack</td>
+                    <td>${mealPlan[day].Snack.item}</td>
+                    <td>${mealPlan[day].Snack.calories}</td>
+                </tr>
+                <tr>
+                    <td>Lunch</td>
+                    <td>${mealPlan[day].Lunch.item}</td>
+                    <td>${mealPlan[day].Lunch.calories}</td>
+                </tr>
+                <tr>
+                    <td>Snack2</td>
+                    <td>${mealPlan[day].Snack2.item}</td>
+                    <td>${mealPlan[day].Snack2.calories}</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td>${mealPlan[day].Dinner.item}</td>
+                    <td>${mealPlan[day].Dinner.calories}</td>
+                </tr>
+            </table>` +
+            `<p><strong>Total Calories: ${totalCalories}</strong></p>`;
             `<table>
                 <tr>
                     <th>Meal</th>

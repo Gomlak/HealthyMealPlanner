@@ -4,100 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Meal Planner</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <meta property="og:title" content="Healthy Meal Planner">
-    <meta property="og:description" content="Discover personalized weekly meal plans for South Indian, North Indian, and Continental cuisines">
-    <meta property="og:image" content="images/banner.jpg">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Healthy Meal Planner</h1>
-        <p>Discover personalized weekly meal plans tailored to your preferred cuisine</p>
+    <h1>Weekly Meal Planner</h1>
+    <div id="meal-planner">
+        <!-- Meal Plan will be populated here -->
     </div>
-
-    <div class="banner-container">
-        <img src="images/banner.jpg" alt="Healthy Food Banner" class="banner-image">
-    </div>
-
-    <div class="controls">
-        <select id="plan-type">
-            <option value="southIndian">South Indian</option>
-            <option value="northIndian">North Indian</option>
-            <option value="continental">Continental</option>
-        </select>
-        <button id="generate-plan">Generate Meal Plan</button>
-    </div>
-
-    <div class="content-section">
-        <div id="meal-planner"></div>
-    </div>
-
-    <footer>
-        <p>© 2024 Healthy Meal Planner. All rights reserved.</p>
-    </footer>
-
-    <script type="module">
-        import { southIndianPlan } from './mealPlans/southIndian.js';
-        import { northIndianPlan } from './mealPlans/northIndian.js';
-        import { continentalPlan } from './mealPlans/continental.js';
-
-        const mealPlans = {
-            southIndian: southIndianPlan,
-            northIndian: northIndianPlan,
-            continental: continentalPlan
-        };
-
-        document.getElementById('generate-plan').addEventListener('click', () => {
-            const planType = document.getElementById('plan-type').value;
-            const selectedPlan = mealPlans[planType];
-            if (selectedPlan) {
-                generateMealPlan(selectedPlan);
-            }
-        });
-
-        function generateMealPlan(mealPlan) {
-            const mealPlannerDiv = document.getElementById('meal-planner');
-            mealPlannerDiv.innerHTML = '';
-
-            for (const day in mealPlan) {
-                const meals = mealPlan[day];
-                const dayDiv = document.createElement('div');
-                dayDiv.className = 'meal-day';
-                
-                let totalCalories = 0;
-                for (const meal in meals) {
-                    if (meals[meal] && meals[meal].calories) {
-                        totalCalories += meals[meal].calories;
-                    }
-                }
-
-                dayDiv.innerHTML = `
-                    <strong>${day}</strong>
-                    <table>
-                        <tr>
-                            <th>Meal</th>
-                            <th>Item</th>
-                            <th>Calories</th>
-                        </tr>
-                        ${Object.entries(meals).map(([meal, details]) => `
-                            <tr>
-                                <td>${meal}</td>
-                                <td>${details.item}</td>
-                                <td>${details.calories}</td>
-                            </tr>
-                        `).join('')}
-                    </table>
-                    <div class="total-calories">
-                        <strong>Total Calories: ${totalCalories}</strong>
-                    </div>
-                `;
-                
-                mealPlannerDiv.appendChild(dayDiv);
-            }
-        }
-
-        // Generate default plan on page load
-        generateMealPlan(southIndianPlan);
-    </script>
+    <button id="generate-plan">Generate Meal Plan</button>
+    <script src="script.js"></script>
 </body>
 </html>
